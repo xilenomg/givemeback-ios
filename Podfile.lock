@@ -21,6 +21,18 @@ PODS:
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
   - Google-Mobile-Ads-SDK (6.12.0)
+  - MMDrawerController (0.5.7):
+    - MMDrawerController/Core
+    - MMDrawerController/MMDrawerBarButtonItem
+    - MMDrawerController/MMDrawerVisualStates
+    - MMDrawerController/Subclass
+  - MMDrawerController/Core (0.5.7)
+  - MMDrawerController/MMDrawerBarButtonItem (0.5.7):
+    - MMDrawerController/Core
+  - MMDrawerController/MMDrawerVisualStates (0.5.7):
+    - MMDrawerController/Core
+  - MMDrawerController/Subclass (0.5.7):
+    - MMDrawerController/Core
   - Reachability (3.1.1)
   - SDWebImage (3.7.1):
     - SDWebImage/Core
@@ -29,12 +41,14 @@ PODS:
 DEPENDENCIES:
   - AFNetworking
   - Google-Mobile-Ads-SDK (= 6.12.0)
+  - MMDrawerController (~> 0.5.7)
   - Reachability
   - SDWebImage (~> 3.6)
 
 SPEC CHECKSUMS:
   AFNetworking: 0aabc6fae66d6e5d039eeb21c315843c7aae51ab
   Google-Mobile-Ads-SDK: b1b5cfd1b604a8412faa5536586b13a4b640f344
+  MMDrawerController: c3ab7a318ddc7e2bcd133139c3161af08c6e1197
   Reachability: 8e9635e3cb4f98e7f825e51147f677ecc694d0e7
   SDWebImage: 116e88633b5b416ea0ca4b334a4ac59cf72dd38d
 

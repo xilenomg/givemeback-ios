@@ -5,6 +5,7 @@ target "givemeback-ios" do
   pod 'AFNetworking'
   pod 'Reachability'
   pod 'SDWebImage', '~>3.6'
+  pod 'MMDrawerController', '~> 0.5.7'
   pod 'Google-Mobile-Ads-SDK', '6.12.0'
 
 end
