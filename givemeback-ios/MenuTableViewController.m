@@ -8,6 +8,8 @@
 
 #import "MenuTableViewController.h"
 #import "UIViewController+MMDrawerController.h"
+#import "AppDelegate.h"
+#import "Items.h"
 
 @interface MenuTableViewController ()
     @property(nonatomic) int currentIndex;
@@ -18,6 +20,44 @@
     [super viewDidLoad];
     
     self.currentIndex = 0;
+    
+    //Core Data
+    AppDelegate* appDelegate = [UIApplication sharedApplication].delegate;
+    self.managedObjectContext = appDelegate.managedObjectContext;
+    
+    //loading data
+    [self updateCountView];
+}
+
+-(void) viewWillAppear:(BOOL)animated{
+    //loading data
+    [self updateCountView];
+}
+
+- (void) updateCountView{
+    self.fetchedRecordsArray = [self getAllItems];
+    self.cellCount.text = [NSString stringWithFormat: @"%lu", (unsigned long)[self.fetchedRecordsArray count]];
+}
+
+#pragma mark - Core Data
+
+-(NSArray*) getAllItems {
+    // initializing NSFetchRequest
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    
+    //Setting Entity to be Queried
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Items" inManagedObjectContext:self.managedObjectContext];
+    [fetchRequest setEntity:entity];
+    NSError* error;
+    //filter
+    NSPredicate *sPredicate = [NSPredicate predicateWithFormat:@"ANY delivered = nil"];
+    [fetchRequest setPredicate:sPredicate];
+    
+    // Query on managedObjectContext With Generated fetchRequest
+    NSArray *fetchedRecords = [self.managedObjectContext executeFetchRequest:fetchRequest error:&error];
+    
+    // Returning Fetched Records
+    return fetchedRecords;
 }
 
 #pragma mark - Table View Delegate
@@ -47,5 +87,6 @@
         [self.mm_drawerController closeDrawerAnimated:YES completion:nil];
     }
 }
+
 
 @end

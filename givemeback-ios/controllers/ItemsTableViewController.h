@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ItemsTableViewController : UITableViewController
+@interface ItemsTableViewController : UITableViewController 
+
+@property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
+@property (nonatomic,strong) NSArray* fetchedRecordsArray;
+
+-(NSArray*) getAllItems;
 
 @end

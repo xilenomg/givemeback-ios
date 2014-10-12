@@ -6,19 +6,23 @@
 //  Copyright (c) 2014 Dataminas Tecnologia e Sistemas. All rights reserved.
 //
 
-#import "AddItemViewController.h"
+#import "AddItemTableViewController.h"
 #import "MMDrawerBarButtonItem.h"
 #import "UIViewController+MMDrawerController.h"
+#import "AppDelegate.h"
+#import "Items.h"
 
-@interface AddItemViewController ()
+@interface AddItemTableViewController ()
 
 @end
 
-@implementation AddItemViewController
+@implementation AddItemTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setupLeftMenuButton];
+    AppDelegate* appDelegate = [UIApplication sharedApplication].delegate;
+    self.managedObjectContext = appDelegate.managedObjectContext;
 }
 
 - (void)setupLeftMenuButton {
@@ -33,6 +37,29 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma Button Actions
+
+- (IBAction)doSave:(id)sender{
+    NSLog(@"saving...");
+    Items *newEntry = [NSEntityDescription insertNewObjectForEntityForName:@"Items" inManagedObjectContext:self.managedObjectContext];
+    
+    newEntry.name = itemName.text;
+    newEntry.contact_name = contactName.text;
+    newEntry.contact_phone = contactPhone.text;
+    newEntry.contact_email = contactEmail.text;
+    newEntry.expected_delivery = expectedDeliveryDate.date;
+    
+    NSError *error;
+    if (![self.managedObjectContext save:&error]) {
+        NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
+    }
+    
+    itemName.text = @"";
+    contactName.text = @"";
+    contactPhone.text = @"";
+    contactEmail.text = @"";
 }
 
 /*

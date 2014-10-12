@@ -8,7 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		8B4005F8D1107985CBE2F9CB /* libPods-givemeback-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A4A3613CCA2F41891394EE36 /* libPods-givemeback-ios.a */; };
-		A00D26D019E8426E003D16FD /* AddItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A00D26CF19E8426E003D16FD /* AddItemViewController.m */; };
+		A00D26D019E8426E003D16FD /* AddItemTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A00D26CF19E8426E003D16FD /* AddItemTableViewController.m */; };
+		A00D26DB19E88901003D16FD /* ItemsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A00D26DA19E88901003D16FD /* ItemsTableViewCell.m */; };
+		A0449CE819E8A9F200F69EF2 /* Items.m in Sources */ = {isa = PBXBuildFile; fileRef = A0449CE719E8A9F200F69EF2 /* Items.m */; };
+		A0449CEE19E8B34700F69EF2 /* ItemDetailsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0449CED19E8B34700F69EF2 /* ItemDetailsTableViewController.m */; };
 		A046583D19E7276C005BF8E7 /* MenuTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A046583C19E7276C005BF8E7 /* MenuTableViewController.m */; };
 		A046584119E72DF5005BF8E7 /* ItemsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A046584019E72DF5005BF8E7 /* ItemsTableViewController.m */; };
 		A0987AEB19E6FB0D00233ECC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A0987AEA19E6FB0D00233ECC /* main.m */; };
@@ -32,8 +35,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		A00D26CE19E8426E003D16FD /* AddItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddItemViewController.h; path = controllers/AddItemViewController.h; sourceTree = "<group>"; };
-		A00D26CF19E8426E003D16FD /* AddItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddItemViewController.m; path = controllers/AddItemViewController.m; sourceTree = "<group>"; };
+		A00D26CE19E8426E003D16FD /* AddItemTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddItemTableViewController.h; path = controllers/AddItemTableViewController.h; sourceTree = "<group>"; };
+		A00D26CF19E8426E003D16FD /* AddItemTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddItemTableViewController.m; path = controllers/AddItemTableViewController.m; sourceTree = "<group>"; };
+		A00D26D919E88901003D16FD /* ItemsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ItemsTableViewCell.h; path = views/ItemsTableViewCell.h; sourceTree = "<group>"; };
+		A00D26DA19E88901003D16FD /* ItemsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ItemsTableViewCell.m; path = views/ItemsTableViewCell.m; sourceTree = "<group>"; };
+		A0449CE619E8A9F200F69EF2 /* Items.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Items.h; path = models/Items.h; sourceTree = "<group>"; };
+		A0449CE719E8A9F200F69EF2 /* Items.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Items.m; path = models/Items.m; sourceTree = "<group>"; };
+		A0449CEC19E8B34700F69EF2 /* ItemDetailsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ItemDetailsTableViewController.h; path = controllers/ItemDetailsTableViewController.h; sourceTree = "<group>"; };
+		A0449CED19E8B34700F69EF2 /* ItemDetailsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ItemDetailsTableViewController.m; path = controllers/ItemDetailsTableViewController.m; sourceTree = "<group>"; };
 		A046583B19E7276C005BF8E7 /* MenuTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuTableViewController.h; sourceTree = "<group>"; };
 		A046583C19E7276C005BF8E7 /* MenuTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuTableViewController.m; sourceTree = "<group>"; };
 		A046583F19E72DF5005BF8E7 /* ItemsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ItemsTableViewController.h; path = controllers/ItemsTableViewController.h; sourceTree = "<group>"; };
@@ -85,6 +94,24 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		A00D26D119E84E79003D16FD /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A0449CE619E8A9F200F69EF2 /* Items.h */,
+				A0449CE719E8A9F200F69EF2 /* Items.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		A00D26D819E888DB003D16FD /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A00D26D919E88901003D16FD /* ItemsTableViewCell.h */,
+				A00D26DA19E88901003D16FD /* ItemsTableViewCell.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		A046583E19E72B91005BF8E7 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -94,8 +121,10 @@
 				A046583C19E7276C005BF8E7 /* MenuTableViewController.m */,
 				A046583F19E72DF5005BF8E7 /* ItemsTableViewController.h */,
 				A046584019E72DF5005BF8E7 /* ItemsTableViewController.m */,
-				A00D26CE19E8426E003D16FD /* AddItemViewController.h */,
-				A00D26CF19E8426E003D16FD /* AddItemViewController.m */,
+				A00D26CE19E8426E003D16FD /* AddItemTableViewController.h */,
+				A00D26CF19E8426E003D16FD /* AddItemTableViewController.m */,
+				A0449CEC19E8B34700F69EF2 /* ItemDetailsTableViewController.h */,
+				A0449CED19E8B34700F69EF2 /* ItemDetailsTableViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -123,13 +152,15 @@
 		A0987AE719E6FB0D00233ECC /* givemeback-ios */ = {
 			isa = PBXGroup;
 			children = (
+				A00D26D819E888DB003D16FD /* Views */,
 				A0987AF519E6FB0D00233ECC /* Main.storyboard */,
+				A0987AEF19E6FB0D00233ECC /* givemeback_ios.xcdatamodeld */,
 				A046583E19E72B91005BF8E7 /* Controllers */,
+				A00D26D119E84E79003D16FD /* Models */,
 				A0987AEC19E6FB0D00233ECC /* AppDelegate.h */,
 				A0987AED19E6FB0D00233ECC /* AppDelegate.m */,
 				A0987AF819E6FB0D00233ECC /* Images.xcassets */,
 				A0987AFA19E6FB0D00233ECC /* LaunchScreen.xib */,
-				A0987AEF19E6FB0D00233ECC /* givemeback_ios.xcdatamodeld */,
 				A0987AE819E6FB0D00233ECC /* Supporting Files */,
 			);
 			path = "givemeback-ios";
@@ -304,9 +335,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0449CEE19E8B34700F69EF2 /* ItemDetailsTableViewController.m in Sources */,
+				A00D26DB19E88901003D16FD /* ItemsTableViewCell.m in Sources */,
 				A046584119E72DF5005BF8E7 /* ItemsTableViewController.m in Sources */,
 				A0987AEE19E6FB0D00233ECC /* AppDelegate.m in Sources */,
-				A00D26D019E8426E003D16FD /* AddItemViewController.m in Sources */,
+				A0449CE819E8A9F200F69EF2 /* Items.m in Sources */,
+				A00D26D019E8426E003D16FD /* AddItemTableViewController.m in Sources */,
 				A0987AEB19E6FB0D00233ECC /* main.m in Sources */,
 				A0987AF419E6FB0D00233ECC /* ViewController.m in Sources */,
 				A0987AF119E6FB0D00233ECC /* givemeback_ios.xcdatamodeld in Sources */,

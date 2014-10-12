@@ -10,5 +10,11 @@
 
 @interface MenuTableViewController : UITableViewController
 
+@property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
+@property (nonatomic,strong) NSArray* fetchedRecordsArray;
+
+@property(nonatomic, strong) IBOutlet UILabel *cellCount;
+
+- (void) updateCountView;
 
 @end
